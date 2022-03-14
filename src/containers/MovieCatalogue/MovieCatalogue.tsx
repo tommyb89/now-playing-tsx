@@ -1,8 +1,13 @@
 import { FC } from "react";
+import "./MovieCatalogue.scss";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
 import { Movie } from "../../data/api";
 
-const MovieCatalogue: FC<{}> = ({ movies }) => {
+type PropTypes = {
+	movies: Movie[];
+};
+
+const MovieCatalogue: FC<PropTypes> = ({ movies }) => {
 	console.log(movies);
 	return (
 		<section className="catalogue">
@@ -12,7 +17,6 @@ const MovieCatalogue: FC<{}> = ({ movies }) => {
 						key={movie.id}
 						id={movie.id}
 						title={movie.title}
-						text={movie.overview}
 						imgSrc={movie.poster_path}
 						year={movie.release_date}
 						rating={movie.vote_average}
