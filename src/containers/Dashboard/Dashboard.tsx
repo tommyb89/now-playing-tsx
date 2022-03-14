@@ -19,6 +19,7 @@ const Dashboard: FC = () => {
 			<Nav />
 			<main className="main">
 				<Sidebar />
+				// issue?
 				{movies ? <MovieCatalogue movies={movies} /> : "...Loading"}
 			</main>
 		</>
