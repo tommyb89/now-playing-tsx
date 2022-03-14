@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./Sidebar.scss";
 
 interface Props {
-	value: any;
+	value: number;
 	handleChange: any;
 }
 
@@ -16,15 +16,16 @@ const Sidebar: FC<Props> = ({ handleChange, value }) => {
 				</div>
 				<div className="sidebar__filter">
 					<form>
-						<label htmlFor="rating">Rating: {value} </label>
+						<label htmlFor="rating">Rating: {value.toFixed(1)} </label>
 						<input
 							type="range"
 							id="rating"
 							name="rating"
-							min={0}
+							min="0"
 							max={10}
 							onChange={handleChange}
 							value={value}
+							step={0.1}
 						/>
 					</form>
 				</div>

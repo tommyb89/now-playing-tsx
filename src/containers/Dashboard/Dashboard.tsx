@@ -9,25 +9,24 @@ const Dashboard: FC = () => {
 	const [movies, setMovies] = useState<Movie[] | null>([]);
 	const [rating, setRating] = useState<number>(0);
 
+	useEffect(() => {
+		(async () => {
+			setMovies((await getMovies()) ?? null);
+
+			applyFilter();
+		})();
+	}, [rating]);
+
 	const applyFilter = () => {
 		if (movies && rating) {
 			let updatedList = movies;
 
 			const filteredList = updatedList.filter(
-				(movie) => movie.vote_average >= rating
+				(movie) => movie.vote_average <= rating
 			);
 			setMovies(filteredList);
 		}
 	};
-	useEffect(() => {
-		(async () => {
-			setMovies((await getMovies()) ?? null);
-		})();
-	}, []);
-
-	useEffect(() => {
-		applyFilter();
-	}, [rating]);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setRating(parseInt(e.target.value));
