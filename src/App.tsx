@@ -1,6 +1,6 @@
 import './App.scss';
 import {FC} from 'react';
-import Dashboard from './containers/Dashboard';
+import Dashboard from './containers/Dashboard/Dashboard';
 
 const App: FC = () => {
   return (
