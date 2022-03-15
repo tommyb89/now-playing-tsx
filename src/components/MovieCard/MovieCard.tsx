@@ -16,7 +16,7 @@ export const MovieCard: FC<MovieProps> = ({ title, imgSrc, rating }) => {
 			<img className="card__img" src={BASE_URL + imgSrc} alt="" />
 			<div className="card__info">
 				<h3 className="card__title">{title}</h3>
-				<span>{rating}</span>
+				<span className="card__rating">{rating}</span>
 			</div>
 		</article>
 	);
