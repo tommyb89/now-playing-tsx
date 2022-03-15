@@ -9,7 +9,6 @@ export interface Movie {
 	id: number;
 	title: string;
 	poster_path: string | number;
-	release_date: string;
 	vote_average: number;
 }
 
@@ -22,13 +21,3 @@ export const getMovies = async (): Promise<void | Movie[]> =>
 		.catch((error: AxiosError) => {
 			console.error(`${error.message} in api.ts -> getMovies.\n`, { error });
 		});
-
-// const getUsers = async (resultNumber) => {
-// 	const res = await fetch(url + `?results=${resultNumber}`);
-// 	const data = await res.json();
-// 	setUsers(data.results);
-// };
-
-// useEffect(() => {
-// 	getUsers(numberOfUsers);
-// }, [numberOfUsers]);

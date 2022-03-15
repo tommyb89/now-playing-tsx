@@ -1,33 +1,28 @@
 .nav {
-  text-align: center;
-  padding: 2rem 10rem;
-  height: 12vh;
-  width: 100%;
-  background-color: rgb(13, 19, 36);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	text-align: center;
+	padding: 2rem 10rem;
+	height: 12vh;
+	width: 100%;
+	background-color: rgb(13, 19, 36);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-  &__logo {
-    height: 4rem;
-  }
+	&__logo {
+		height: 4rem;
+	}
 
-  &__heading {
-    color: white;
-    margin-left: 1rem;
-  }
+	&__links {
+		margin-left: 2rem;
+		color: white;
+		list-style: none;
+		display: flex;
+		font-size: 1.8rem;
+	}
 
-  &__links {
-    margin-left: 2rem;
-    color: white;
-    list-style: none;
-    display: flex;
-    font-size: 2rem;
-  }
-
-  &__item {
-    margin-left: 1.8rem;
-    text-transform: uppercase;
-    display: inline-block;
-  }
+	&__item {
+		margin-left: 1.8rem;
+		text-transform: uppercase;
+		display: inline-block;
+	}
 }

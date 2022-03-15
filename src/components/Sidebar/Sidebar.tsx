@@ -12,20 +12,22 @@ const Sidebar: FC<Props> = ({ handleChange, value }) => {
 			<h2 className="sidebar__heading">Now Playing Movies</h2>
 			<div className="sidebar__wrapper">
 				<div className="sidebar__container">
-					<h3 className="sidebar__name">Filter</h3>
+					<h3 className="sidebar__name">Filter movies by rating</h3>
 				</div>
 				<div className="sidebar__filter">
 					<form>
-						<label htmlFor="rating">Rating: {value.toFixed(1)} </label>
+						<label htmlFor="rating">
+							Rating {">"} {value}
+						</label>
 						<input
 							type="range"
 							id="rating"
 							name="rating"
-							min="0"
+							min={0}
 							max={10}
 							onChange={handleChange}
 							value={value}
-							step={0.1}
+							step="0.1"
 						/>
 					</form>
 				</div>

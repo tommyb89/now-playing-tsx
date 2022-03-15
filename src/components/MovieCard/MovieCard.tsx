@@ -5,13 +5,12 @@ interface MovieProps {
 	id: number;
 	title: string;
 	imgSrc: string | number;
-	year: string;
 	rating: number;
 }
 
 const BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-export const MovieCard: FC<MovieProps> = ({ title, imgSrc, year, rating }) => {
+export const MovieCard: FC<MovieProps> = ({ title, imgSrc, rating }) => {
 	return (
 		<article className="card">
 			<img className="card__img" src={BASE_URL + imgSrc} alt="" />

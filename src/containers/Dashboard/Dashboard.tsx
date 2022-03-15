@@ -7,25 +7,27 @@ import { getMovies, Movie } from "../../data/api";
 
 const Dashboard: FC = () => {
 	const [movies, setMovies] = useState<Movie[] | null>([]);
+	const [displayMovies, setDisplayMovies] = useState<Movie[] | null>([]);
 	const [rating, setRating] = useState<number>(0);
 
 	useEffect(() => {
-		(async () => {
-			setMovies((await getMovies()) ?? null);
+		initialApiCall();
+	}, []);
 
-			applyFilter();
-		})();
-	}, [rating]);
-
-	const applyFilter = () => {
-		if (movies && rating) {
-			let updatedList = movies;
-
-			const filteredList = updatedList.filter(
-				(movie) => movie.vote_average <= rating
-			);
-			setMovies(filteredList);
+	useEffect(() => {
+		if (!movies) {
+			return;
 		}
+		applyFilter(movies, rating);
+	}, [movies, rating]);
+
+	const initialApiCall = async () => {
+		const res = (await getMovies()) ?? null;
+		setMovies(res);
+	};
+
+	const applyFilter = (movies: Movie[], rating: number = 0) => {
+		setDisplayMovies(movies.filter((movie) => movie.vote_average >= rating));
 	};
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +39,11 @@ const Dashboard: FC = () => {
 			<Nav />
 			<main className="main">
 				<Sidebar value={rating} handleChange={handleChange} />
-				{movies ? <MovieCatalogue movies={movies} /> : "...Loading"}
+				{displayMovies ? (
+					<MovieCatalogue movies={displayMovies} />
+				) : (
+					"...Loading"
+				)}
 			</main>
 		</>
 	);

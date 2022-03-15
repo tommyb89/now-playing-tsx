@@ -1,15 +1,15 @@
 .sidebar {
-  width: 20vw;
-  height: 80vh;
-  background-color: rgb(241, 241, 241);
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 2rem;
+	background-color: rgb(241, 241, 241);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 2rem;
+	padding: 2rem;
+	max-width: 350px;
+	gap: 1rem;
+	margin-bottom: 2rem;
 
-  &__heading {
-    margin-top: 2rem;
-    font-weight: bolder;
-  }
+	&__heading {
+		font-weight: bolder;
+	}
 }

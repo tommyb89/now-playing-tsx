@@ -8,7 +8,6 @@ type PropTypes = {
 };
 
 const MovieCatalogue: FC<PropTypes> = ({ movies }) => {
-	console.log(movies);
 	return (
 		<section className="catalogue">
 			{movies.map((movie: Movie) => {
@@ -18,7 +17,6 @@ const MovieCatalogue: FC<PropTypes> = ({ movies }) => {
 						id={movie.id}
 						title={movie.title}
 						imgSrc={movie.poster_path}
-						year={movie.release_date}
 						rating={movie.vote_average}
 					/>
 				);

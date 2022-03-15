@@ -8,9 +8,7 @@
 	overflow: hidden;
 
 	&__img {
-		object-fit: contain;
-		border-top: 2rem;
-		width: 250px;
+		width: 100%;
 	}
 
 	&__info {
