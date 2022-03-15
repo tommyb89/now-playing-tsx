@@ -1,5 +1,6 @@
 .card {
 	max-width: 250px;
+	overflow: hidden;
 
 	&__img {
 		width: 100%;
@@ -10,16 +11,16 @@
 	&__info {
 		display: flex;
 		padding: 0.3rem;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
+	}
+
+	&__title {
+		font-size: 1.2rem;
 	}
 
 	&__rating {
 		font-weight: bold;
-
-		&-num {
-			color: rgb(4, 0, 255);
-		}
 	}
 }
 
