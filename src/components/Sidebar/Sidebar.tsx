@@ -14,23 +14,23 @@ const Sidebar: FC<Props> = ({ handleChange, value }) => {
 				<div className="sidebar__container">
 					<h3 className="sidebar__name">Filter movies by rating</h3>
 				</div>
-				<div className="sidebar__filter">
-					<form>
-						<label htmlFor="rating">
-							Rating {">"} {value}
-						</label>
-						<input
-							type="range"
-							id="rating"
-							name="rating"
-							min={0}
-							max={10}
-							onChange={handleChange}
-							value={value}
-							step="0.1"
-						/>
-					</form>
-				</div>
+
+				<form className="sidebar__filter">
+					<label htmlFor="rating">
+						Rating {">"} {value}
+					</label>
+					<input
+						className="sidebar__slider"
+						type="range"
+						id="rating"
+						name="rating"
+						min={0}
+						max={10}
+						onChange={handleChange}
+						value={value}
+						step="0.1"
+					/>
+				</form>
 			</div>
 		</section>
 	);

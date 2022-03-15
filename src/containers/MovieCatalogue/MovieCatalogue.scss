@@ -1,5 +1,5 @@
 .catalogue {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	grid-gap: 2rem 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
 }

@@ -1,26 +1,38 @@
 .card {
+	max-width: 250px;
+
 	&__img {
 		width: 100%;
 		border-radius: 1rem;
-		object-fit: cover;
-		height: 300px;
+		height: 350px;
 	}
 
 	&__info {
 		display: flex;
 		padding: 0.3rem;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 	}
 
 	&__rating {
-		background-color: rgb(47, 180, 42);
-		padding: 5px;
-		color: white;
 		font-weight: bold;
-		width: 2rem;
-		height: 2rem;
-		text-align: center;
-		border-radius: 2rem;
+
+		&-num {
+			color: rgb(4, 0, 255);
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.card {
+		max-width: 200px;
+		&__img {
+			height: 200px;
+			object-fit: contain;
+		}
+
+		&__title {
+			font-size: 1rem;
+		}
 	}
 }

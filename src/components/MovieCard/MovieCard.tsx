@@ -1,5 +1,6 @@
 import { FC } from "react";
 import "./MovieCard.scss";
+import { motion } from "framer-motion";
 
 interface MovieProps {
 	id: number;
@@ -12,12 +13,14 @@ const BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 export const MovieCard: FC<MovieProps> = ({ title, imgSrc, rating }) => {
 	return (
-		<article className="card">
+		<motion.div layout className="card">
 			<img className="card__img" src={BASE_URL + imgSrc} alt="" />
 			<div className="card__info">
 				<h3 className="card__title">{title}</h3>
-				<span className="card__rating">{rating}</span>
+				<p className="card__rating">
+					Rating: <span className="card__rating-num">{rating}</span>
+				</p>
 			</div>
-		</article>
+		</motion.div>
 	);
 };

@@ -1,28 +1,17 @@
 .nav {
-	text-align: center;
-	padding: 2rem 10rem;
+	padding: 1rem 5rem;
 	height: 12vh;
 	width: 100%;
 	background-color: rgb(13, 19, 36);
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+}
 
-	&__logo {
-		height: 4rem;
-	}
+@media screen and (max-width: 568px) {
+	.nav {
+		padding: 1rem 2rem;
 
-	&__links {
-		margin-left: 2rem;
-		color: white;
-		list-style: none;
-		display: flex;
-		font-size: 1.8rem;
-	}
-
-	&__item {
-		margin-left: 1.8rem;
-		text-transform: uppercase;
-		display: inline-block;
+		&__logo {
+			width: 7rem;
+		}
 	}
 }
