@@ -23,7 +23,7 @@
 		align-items: center;
 		position: absolute;
 		bottom: 0;
-		background: rgb(0, 0, 0);
+		background: rgba(0, 0, 0, 0.8);
 		transition: ease-in;
 		opacity: 0;
 		transition: 0.3s;
@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 568px) {
 	.card {
-		width: 150px;
+		width: auto;
 
 		&__img {
 			height: 150px;

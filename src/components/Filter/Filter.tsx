@@ -14,8 +14,7 @@ const Filter: FC<Props> = ({ handleChange, value }) => {
 				<div className="filter__container">
 					<h3 className="filter__name">Filter movies by rating</h3>
 				</div>
-
-				<form className="filter__filter">
+				<form className="filter__form">
 					<label htmlFor="rating">
 						Rating {">"} {value}
 					</label>
@@ -30,9 +29,8 @@ const Filter: FC<Props> = ({ handleChange, value }) => {
 						value={value}
 						step="0.1"
 					/>
-
-					<label htmlFor=""></label>
 				</form>
+				<button className="filter__button">Sort</button>
 			</div>
 		</section>
 	);

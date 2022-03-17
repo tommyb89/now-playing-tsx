@@ -8,7 +8,12 @@ import { getMovies, Movie } from "../../data/api";
 const Dashboard: FC = () => {
 	const [movies, setMovies] = useState<Movie[] | null>([]);
 	const [displayMovies, setDisplayMovies] = useState<Movie[] | null>([]);
+
 	const [rating, setRating] = useState<number>(0);
+	const [sortKey, setSortKey] = useState();
+	const [sortOrder, setSortOrder] = useState();
+
+	type Data = typeof displayMovies;
 
 	useEffect(() => {
 		initialApiCall();
