@@ -1,17 +1,12 @@
 .card {
-	width: 220px;
 	overflow: hidden;
 	text-align: center;
+	width: 200px;
 
 	&__img {
 		border-radius: 1rem;
 		height: 300px;
 		object-fit: contain;
-		transition: 0.3s;
-
-		&:hover {
-			height: 310px;
-		}
 	}
 
 	&__info {
@@ -32,15 +27,24 @@
 
 @media screen and (max-width: 568px) {
 	.card {
-		max-width: 200px;
+		width: 150px;
+
 		&__img {
-			height: 200px;
+			height: 150px;
 			object-fit: contain;
 			border-radius: 1rem;
 		}
 
+		&__info {
+			flex-direction: column;
+		}
+
 		&__title {
-			font-size: 1rem;
+			font-size: 0.9rem;
+		}
+
+		&__rating {
+			font-size: 0.8rem;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import "./Dashboard.scss";
 import Nav from "../../components/Nav/Nav";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Filter from "../../components/Filter/Filter";
 import MovieCatalogue from "../MovieCatalogue/MovieCatalogue";
 import { getMovies, Movie } from "../../data/api";
 
@@ -38,7 +38,7 @@ const Dashboard: FC = () => {
 		<>
 			<Nav />
 			<main className="main">
-				<Sidebar value={rating} handleChange={handleChange} />
+				<Filter value={rating} handleChange={handleChange} />
 				{displayMovies ? (
 					<MovieCatalogue movies={displayMovies} />
 				) : (
