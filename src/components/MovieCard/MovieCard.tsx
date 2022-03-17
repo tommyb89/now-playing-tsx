@@ -12,12 +12,6 @@ interface MovieProps {
 const BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 export const MovieCard: FC<MovieProps> = ({ title, imgSrc, rating }) => {
-	// const [active, setActive] = useState(false);
-
-	// const toggleHover = () => {
-	// 	setActive(!active);
-	// };
-
 	return (
 		<motion.div
 			whileHover={{
