@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import "./MovieCard.scss";
 import { motion } from "framer-motion";
 
