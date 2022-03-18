@@ -10,10 +10,9 @@ const Dashboard: FC = () => {
 	const [displayMovies, setDisplayMovies] = useState<Movie[] | null>([]);
 
 	const [rating, setRating] = useState<number>(0);
-	const [sortKey, setSortKey] = useState();
-	const [sortOrder, setSortOrder] = useState();
+	// const [sortOrder, setSortOrder] = useState<keyof Movie>("vote_average");
 
-	type Data = typeof displayMovies;
+	console.log(movies);
 
 	useEffect(() => {
 		initialApiCall();
@@ -43,7 +42,11 @@ const Dashboard: FC = () => {
 		<>
 			<Nav />
 			<main className="main">
-				<Filter value={rating} handleChange={handleChange} />
+				<Filter
+					value={rating}
+					handleChange={handleChange}
+					onClick={applyFilter}
+				/>
 				{displayMovies ? (
 					<MovieCatalogue movies={displayMovies} />
 				) : (

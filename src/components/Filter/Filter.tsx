@@ -4,9 +4,10 @@ import "./Filter.scss";
 interface Props {
 	value: number;
 	handleChange: any;
+	onClick: any;
 }
 
-const Filter: FC<Props> = ({ handleChange, value }) => {
+const Filter: FC<Props> = ({ handleChange, value, onClick }) => {
 	return (
 		<section className="filter">
 			<h2 className="filter__heading">Now Playing Movies</h2>
@@ -30,7 +31,9 @@ const Filter: FC<Props> = ({ handleChange, value }) => {
 						step="0.1"
 					/>
 				</form>
-				<button className="filter__button">Sort</button>
+				<button className="filter__button" onClick={onClick}>
+					Sort
+				</button>
 			</div>
 		</section>
 	);
