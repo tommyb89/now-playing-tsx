@@ -30,7 +30,6 @@ const Filter: FC<Props> = ({ handleChange, value }) => {
 						step="0.1"
 					/>
 				</form>
-				<button className="filter__button">Sort</button>
 			</div>
 		</section>
 	);
